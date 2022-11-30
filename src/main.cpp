@@ -12,6 +12,7 @@ void loop() {
   //code to test that the ESP32 is working and properly connected to the PC
   for(int i=0; i < 10; i++){
     Serial.println(a++);
+    Serial.printf("Hello World!\n");
      delay(1000);
   }
 }
