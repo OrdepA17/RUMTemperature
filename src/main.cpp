@@ -1,16 +1,17 @@
 #include <Arduino.h>
 
-#define PIN_ANALOG_IN   27
+//Code structure to be used during the project following standard C and C++ coding practices
+
+#define PIN_ANALOG_IN   27 //pin used for inputs
+int a=0;  //test variable
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
 }
 
 void loop() {
-  int adcValue = analogRead(PIN_ANALOG_IN);                       //read ADC pin
-  double voltage = (float)adcValue / 4095.0 * 3.3;                // calculate voltage
-  double Rt = 10 * voltage / (3.3 - voltage);                     //calculate resistance value of thermistor
-  double tempK = 1 / (1 / (273.15 + 25) + log(Rt / 10) / 3950.0); //calculate temperature (Kelvin)
-  double tempC = tempK - 273.15;                                  //calculate temperature (Celsius)
-  Serial.printf("ADC value : %d,\tVoltage : %.2fV, \tTemperature : %.2fC\n", adcValue, voltage, tempC);
-  delay(1000);
+  //code to test that the ESP32 is working and properly connected to the PC
+  for(int i=0; i < 10; i++){
+    Serial.println(a++);
+     delay(1000);
+  }
 }
